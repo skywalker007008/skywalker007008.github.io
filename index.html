@@ -110,18 +110,18 @@
 <h3 id="Dependencies"><a href="#Dependencies" class="headerlink" title="Dependencies"></a>Dependencies</h3><ul>
 <li>Add these dependencies in case of error in the following steps.</li>
 </ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get install python-dev</span><br><span class="line">sudo apt-get install libffi-dev</span><br><span class="line">sudo apt-get install libssl-dev</span><br><span class="line">sudo apt-get install -y make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev xz-utils tk-dev</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get install python-dev</span><br><span class="line">sudo apt-get install libffi-dev</span><br><span class="line">sudo apt-get install libssl-dev</span><br><span class="line">sudo apt-get install -y make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev xz-utils tk-dev</span><br></pre></td></tr></table></figure>
 
 <h3 id="Install"><a href="#Install" class="headerlink" title="Install"></a>Install</h3><ul>
 <li>Open the folder where you download it, extract it and enter the folder.</li>
-<li>Configure and Make<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">./configure prefix=/usr/local/python3</span><br><span class="line">sudo make &amp;&amp; make install</span><br></pre></td></tr></table></figure></li>
+<li>Configure and Make<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">./configure prefix=/usr/local/python3</span><br><span class="line">sudo make &amp;&amp; sudo make install</span><br></pre></td></tr></table></figure></li>
 </ul>
 <blockquote>
 <p>Add sudo due to the error of <strong>permission denied</strong></p>
 </blockquote>
 <h3 id="Add-Links"><a href="#Add-Links" class="headerlink" title="Add Links"></a>Add Links</h3><ul>
-<li>Use the command to add link for the python3.8<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo ln -s /usr/local/python3/bin/python3 /usr/bin/python3.8</span><br></pre></td></tr></table></figure></li>
-<li><strong>Although it is not correct, it can fix the problems in the last step of packages update</strong><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo mv /usr/bin/python /usr/bin/python.bak</span><br><span class="line">sudo ln -s /usr/local/python3/bin/python3 /usr/bin/python</span><br></pre></td></tr></table></figure>
+<li>Use the command to add link for the python3.8<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo ln -s /usr/<span class="built_in">local</span>/python3/bin/python3 /usr/bin/python3.8</span><br></pre></td></tr></table></figure></li>
+<li><strong>Although it is not correct, it can fix the problems in the last step of packages update</strong><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo mv /usr/bin/python /usr/bin/python.bak</span><br><span class="line">sudo ln -s /usr/<span class="built_in">local</span>/python3/bin/python3 /usr/bin/python</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>The <strong>python.bak</strong> is the python2 link.</p>
 </blockquote>
@@ -129,7 +129,7 @@
 </ul>
 <h2 id="More-later…"><a href="#More-later…" class="headerlink" title="More later…"></a>More later…</h2><ul>
 <li><p>Now you can check the python version. You can see Python3.8+.</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">python3.8 --version</span><br><span class="line">python --version</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">python3.8 --version</span><br><span class="line">python --version</span><br></pre></td></tr></table></figure></li>
 <li><p>Follow the other steps shown in the tutorial to finish the setup.</p>
 </li>
 </ul>
@@ -137,7 +137,7 @@
 <li><p>Some of you may find it error when trying to check the Ryu in the last step. It is because of the version of package <strong>eventlet</strong>.</p>
 </li>
 <li><p>To fix it, install another version of it.</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install eventlet==0.30.2</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install eventlet==0.30.2</span><br></pre></td></tr></table></figure></li>
 <li><p>It should be fine then.</p>
 </li>
 </ul>
